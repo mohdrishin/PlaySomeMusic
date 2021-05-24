@@ -25,14 +25,28 @@
             </div>
             <div class="right-col">
                 <p>Click Here to Listen</p>
-                <img src="images/play-button.png" class="playbtn">
+                <img src="images/play-button.png" id="icon">
             </div>
         </div>
-
-
     </div>
+    <audio id="mySong">
+        <source src="media/music.mp3" type=audio/mp3>
+    </audio>
 
+    <script>
+        var mySong = document.getElementById("mySong");
+        var icon = document.getElementById("icon");
 
+        icon.onclick = function(){
+            if(mySong.paused){
+                mySong.play();
+                icon.src = "images/pause-button.png";
+            }else{
+                mySong.pause();
+                icon.src = "images/play-button.png";
+            }
+        }
+    </script>
 
 
 </body>
